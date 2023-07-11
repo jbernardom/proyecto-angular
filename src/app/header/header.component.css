@@ -1,0 +1,28 @@
+
+
+.container {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+
+}
+
+.img {
+    width: 350px;
+    height: 150px;
+    border-radius: 50px;
+}
+
+.img1 {
+    width: 110px;
+    height: 110px;
+}
+ .img2 {
+    width: 100px;
+    height: 100px;
+ }
+ .img3 {
+    width: 100px;
+    height: 100px;
+ }

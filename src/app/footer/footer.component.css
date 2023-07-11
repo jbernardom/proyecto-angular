@@ -1,0 +1,25 @@
+.redes {
+    display: flex;
+    justify-content: center; 
+    gap: 40px;
+ }
+ 
+ .redes a {
+     font-size: 60px;
+ }
+ 
+ .facebook {
+     color: blue;
+ }
+ 
+ .twitter {
+     color: rgb(120, 175, 221);
+ }
+ 
+ .whatsapp {
+     color: green;
+ }
+ 
+ .redes a:hover {
+     transform: scale(1.2);
+ }
