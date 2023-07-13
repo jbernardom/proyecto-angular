@@ -1,0 +1,22 @@
+.product-card {
+  width:10%;
+  margin:50px auto;
+  border-style: solid;
+  border-color: blue;
+  background-color: bisque;
+  color: black;
+
+
+}
+
+
+.product-card .img-product img {
+  width:100%;
+}
+
+
+.contenedor {
+  display: flex;
+  justify-content: flex-start;
+
+}
