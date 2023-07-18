@@ -5,6 +5,15 @@ import { Component } from '@angular/core';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
+
+
 export class NavComponent {
 
+  isMenuVisible = false;
+
+  toggleMenu() {
+    this.isMenuVisible = !this.isMenuVisible;
+  }
+
+  
 }
