@@ -1,7 +1,7 @@
 
 
 .container {
-    display: flex; 
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap-reverse;
     justify-content: space-evenly;
@@ -26,3 +26,13 @@
     width: 100px;
     height: 100px;
  }
+ .toggle-icon {
+  display: none;
+}
+
+/* Mostrar el icono Font Awesome cuando la pantalla sea menor a 768px */
+@media screen and (max-width: 767px) {
+  .toggle-icon {
+    display: inline-block;
+  }
+}

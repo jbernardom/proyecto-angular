@@ -11,6 +11,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { CardsComponent } from './cards/cards.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([
+      {path:"productos",component:ProductosComponent}
+    ]),
+    RouterModule.forRoot([
+      {path:"nosotros",component:NosotrosComponent}
+    ]),
+    RouterModule.forRoot([
+      {path:"cards",component:CardsComponent}
+    ]),
     NgbModule,
     FontAwesomeModule
   ],
