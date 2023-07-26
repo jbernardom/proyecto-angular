@@ -1,56 +1,40 @@
 
 <section class="contenedor d-flex justify-content-center">
-
+  <div class="product-card">
+    <figure class="img-product">
+      <img src="assets/Imagenes/tubo.jpg">
+      <div class="card">
+        <h1>{{ informeProductos[0].producto }}</h1>
+        <p>{{ informeProductos[0].descripcion }}</p>
+        <span>{{ informeProductos[0].costo }}</span>
+        <p>{{ informeProductos[0].cantidad }}</p>
+      </div>
+    </figure>
+  </div>
 
   <div class="product-card">
-      <figure class="img-product">
-          <img src="assets/Imagenes/tubo.jpg">
+    <figure class="img-product">
+      <img src="assets/Imagenes/dos.jpg">
+      <div class="card">
+        <h1>{{ informeProductos1[0].producto }}</h1>
+        <p>{{ informeProductos1[0].descripcion }}</p>
+        <span>{{ informeProductos1[0].costo }}</span>
+        <p>{{ informeProductos1[0].cantidad }}</p>
+      </div>
+    </figure>
+  </div>
 
-
-              <div id="card">
-                  <h1>producto</h1>
-                  <p>Descripcion</p>
-                  <img src="" alt="">
-                  <span>Costo</span>
-                  <p>Cantidad</p>
-              </div>
-          </figure>
-
-   </div>
-
-
-      <div class="product-card">
-          <figure class="img-product">
-              <img src="assets/Imagenes/dos.jpg">
-
-
-                  <div id="card1">
-                      <h1>producto</h1>
-                      <p>Descripcion</p>
-                      <img src="" alt="">
-                      <span>Costo</span>
-                      <p>Cantidad</p>
-                  </div>
-              </figure>
-
-       </div>
-
-
-       <div class="product-card">
-          <figure class="img-product">
-              <img src="assets/Imagenes/racor.jpg">
-
-
-                  <div id="card2">
-                      <h1>producto</h1>
-                      <p>Descripcion</p>
-                      <img src="" alt="">
-                      <span>Costo</span>
-                      <p>Cantidad</p>
-                  </div>
-              </figure>
-
-       </div>
-
-
+  <div class="product-card">
+    <figure class="img-product">
+      <img src="assets/Imagenes/racor.jpg">
+      <div class="card">
+        <h1>{{ informeProductos2[0].producto }}</h1>
+        <p>{{ informeProductos2[0].descripcion }}</p>
+        <span>{{ informeProductos2[0].costo }}</span>
+        <p>{{ informeProductos2[0].cantidad }}</p>
+      </div>
+    </figure>
+  </div>
 </section>
+
+

@@ -1,16 +1,28 @@
 table {
   border-collapse: collapse;
-  font-size: 20px;
-}
-th,td {
-  border-style: ridge;
-  padding: 15px;
-}
-tr>th {
-  background-color: #F9F5EB;
-  color: black;
+  width: 100%;
 }
 
-tr>td {
-  background-color: antiquewhite;
+caption {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px;
 }
+
+th {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 5px;
+}
+
+td img {
+  display: block;
+  margin: 0 auto;
+}
+
+tbody tr {
+  margin-bottom: 10px;}
