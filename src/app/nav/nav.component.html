@@ -2,11 +2,11 @@
 <nav id="menu" [ngClass]="{'show': isMenuVisible}">
     <button id="toggleButton"  (click)="toggleMenu()">Mostrar/ocultar</button>
     <ul>
-        <li><a href="">Inicio</a></li>
-        <li><a href="http://127.0.0.1:5500/pagina2.html">Nosotros</a></li>
-        <li><a href="http://127.0.0.1:5500/pagina3.html">Productos</a></li>
+        <li><a routerLink="#inicio">Inicio</a></li>
+        <li><a routerLink="nosotros">Nosotros</a></li>
+        <li><a routerLink="productos">Productos</a></li>
         <li><a href="http://127.0.0.1:5500/pagina4.html">Cotizar</a></li>
-        <li><a href="http://127.0.0.1:5500/pagina5.html">Productos js</a></li>
+        <li><a routerLink="cards">Productos js</a></li>
     </ul>
 </nav>
 

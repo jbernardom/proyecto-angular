@@ -12,6 +12,7 @@ import { CardsComponent } from './cards/cards.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { RouterModule } from '@angular/router';
+import { FormularioModule } from './formulario/formulario.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    FormularioModule,
     RouterModule.forRoot([
       {path:"productos",component:ProductosComponent}
     ]),
