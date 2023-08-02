@@ -1,11 +1,14 @@
-<label for="nombre">Nombre</label>
-<input type="text" id="nombre" [formControl]="nombre">
+<form [formGroup]="formContac" (ngSubmit)="enviarContacto()">
+  <input type="text" formControlName="nombre" placeholder="Nombre">
+  <div *ngIf="formContac.controls.nombre.invalid && formContac.controls.nombre.touched">Campo obligatorio.</div>
 
-<label for="apellido">Apellido</label>
-<input type="text" id="apellido" [formControl]="apellido">
+  <input type="text" formControlName="apellido" placeholder="Apellido">
 
-<label for="telefono">Telefono</label>
-<input type="number" id="telefono" [formControl]="telefono">
+  <input type="number" formControlName="telefono" placeholder="Teléfono">
+  <div *ngIf="formContac.controls.telefono.invalid && formContac.controls.telefono.touched">Ingresa solo números.</div>
 
-<label for="email">Email</label>
-<input type="email" id="email" [formControl]="email">
+  <input type="email" formControlName="email" placeholder="Email">
+  <div *ngIf="formContac.controls.email.invalid && formContac.controls.email.touched">Ingresa un email válido.</div>
+
+  <button type="submit">Enviar</button>
+</form>

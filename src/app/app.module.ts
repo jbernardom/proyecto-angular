@@ -13,6 +13,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { RouterModule } from '@angular/router';
 import { FormularioModule } from './formulario/formulario.module';
+import { CotizarComponent } from './cotizar/cotizar.component';
+import { ContactoComponent } from './formulario/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -23,20 +25,21 @@ import { FormularioModule } from './formulario/formulario.module';
     BannerComponent,
     NosotrosComponent,
     ProductosComponent,
+    CotizarComponent,
     CardsComponent
   ],
   imports: [
     BrowserModule,
     FormularioModule,
     RouterModule.forRoot([
-      {path:"productos",component:ProductosComponent}
+      {path:"banner",component:BannerComponent},
+      {path:"productos",component:ProductosComponent},
+      {path:"nosotros",component:NosotrosComponent},
+      {path:"cotizar",component:CotizarComponent},
+      {path:"cards",component:CardsComponent},
+      {path:"contacto",component:ContactoComponent}
     ]),
-    RouterModule.forRoot([
-      {path:"nosotros",component:NosotrosComponent}
-    ]),
-    RouterModule.forRoot([
-      {path:"cards",component:CardsComponent}
-    ]),
+
     NgbModule,
     FontAwesomeModule
   ],
