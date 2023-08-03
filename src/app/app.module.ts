@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -12,7 +11,7 @@ import { CardsComponent } from './cards/cards.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { RouterModule } from '@angular/router';
-import { FormularioModule } from './formulario/formulario.module';
+import { FormularioModule } from './formulario/formulario.module'; // Asegúrate de importar el módulo aquí
 import { CotizarComponent } from './cotizar/cotizar.component';
 import { ContactoComponent } from './formulario/contacto/contacto.component';
 
@@ -32,12 +31,12 @@ import { ContactoComponent } from './formulario/contacto/contacto.component';
     BrowserModule,
     FormularioModule,
     RouterModule.forRoot([
-      {path:"banner",component:BannerComponent},
-      {path:"productos",component:ProductosComponent},
-      {path:"nosotros",component:NosotrosComponent},
-      {path:"cotizar",component:CotizarComponent},
-      {path:"cards",component:CardsComponent},
-      {path:"contacto",component:ContactoComponent}
+      { path: "banner", component: BannerComponent },
+      { path: "productos", component: ProductosComponent },
+      { path: "nosotros", component: NosotrosComponent },
+      { path: "cotizar", component: CotizarComponent },
+      { path: "cards", component: CardsComponent },
+      { path: "contacto", component: ContactoComponent }
     ]),
 
     NgbModule,
@@ -47,4 +46,3 @@ import { ContactoComponent } from './formulario/contacto/contacto.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

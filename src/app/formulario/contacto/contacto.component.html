@@ -1,14 +1,17 @@
+<div class="form-header">
+   <h2>Contacto</h2>
+ </div>
 <form [formGroup]="formContac" (ngSubmit)="enviarContacto()">
   <input type="text" formControlName="nombre" placeholder="Nombre">
-  <div *ngIf="formContac.controls.nombre.invalid && formContac.controls.nombre.touched">Campo obligatorio.</div>
+  <div class="error" *ngIf="formContac.controls['nombre'].invalid && formContac.controls['nombre'].touched">Nombre no puede estar vacio.</div>
 
   <input type="text" formControlName="apellido" placeholder="Apellido">
 
   <input type="number" formControlName="telefono" placeholder="Teléfono">
-  <div *ngIf="formContac.controls.telefono.invalid && formContac.controls.telefono.touched">Ingresa solo números.</div>
+  <div *ngIf="formContac.controls['telefono'].invalid && formContac.controls['telefono'].touched">Ingresa solo números.</div>
 
   <input type="email" formControlName="email" placeholder="Email">
-  <div *ngIf="formContac.controls.email.invalid && formContac.controls.email.touched">Ingresa un email válido.</div>
+  <div class="error" *ngIf="formContac.controls['email'].invalid && formContac.controls['email'].touched">Ingresa un email válido.</div>
 
   <button type="submit">Enviar</button>
 </form>
