@@ -14,6 +14,8 @@ import { RouterModule } from '@angular/router';
 import { FormularioModule } from './formulario/formulario.module'; // Asegúrate de importar el módulo aquí
 import { CotizarComponent } from './cotizar/cotizar.component';
 import { ContactoComponent } from './formulario/contacto/contacto.component';
+import { BuscadorComponent } from './buscador/buscador.component';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,18 +27,21 @@ import { ContactoComponent } from './formulario/contacto/contacto.component';
     NosotrosComponent,
     ProductosComponent,
     CotizarComponent,
-    CardsComponent
+    CardsComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,
     FormularioModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: "banner", component: BannerComponent },
       { path: "productos", component: ProductosComponent },
       { path: "nosotros", component: NosotrosComponent },
       { path: "cotizar", component: CotizarComponent },
       { path: "cards", component: CardsComponent },
-      { path: "contacto", component: ContactoComponent }
+      { path: "contacto", component: ContactoComponent },
+      {path: "buscador", component: BuscadorComponent}
     ]),
 
     NgbModule,

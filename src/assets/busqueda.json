@@ -1,0 +1,29 @@
+{
+  "informacionFiltrarPagina": [
+    {
+      "titulo": "Tubo Figurado",
+      "imagen": "metodo.png",
+      "descripcion": "tubo para todo tipo"
+    },
+    {
+      "titulo": "Racores",
+      "imagen": "metodo.png",
+      "descripcion": "racores para todo tipo"
+    },
+    {
+      "titulo": "Manguera",
+      "imagen": "metodo.png",
+      "descripcion": "Manguera para todo tipo"
+    },
+    {
+      "titulo": "Correas",
+      "imagen": "metodo.png",
+      "descripcion": "Correas para todo tipo"
+    },
+    {
+      "titulo": "Tubo ",
+      "imagen": "metodo.png",
+      "descripcion": "tubo para todo tipo"
+    }
+  ]
+}
