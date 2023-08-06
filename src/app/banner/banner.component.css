@@ -9,13 +9,14 @@ p {
   background-image: url(../../assets/Imagenes/servi.jpg);
   color: white;
   height: 900px;
-  padding-top: 10px;
-
 }
-
+.banner {
+  flex: 1; /* Hacemos que el div ocupe el espacio disponible */
+}
 .contenido {
+  flex: 1;
   display: flex;
-  justify-content: space-around;
+  justify-content: right;
 }
 
 .productos {

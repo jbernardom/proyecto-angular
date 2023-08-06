@@ -1,17 +1,28 @@
 <div class="form-header">
-   <h2>Contacto</h2>
- </div>
+  <h2>Contacto</h2>
+</div>
+
 <form [formGroup]="formContac" (ngSubmit)="enviarContacto()">
-  <input type="text" formControlName="nombre" placeholder="Nombre">
-  <div class="error" *ngIf="formContac.controls['nombre'].invalid && formContac.controls['nombre'].touched">Nombre no puede estar vacio.</div>
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" formControlName="nombre" placeholder="Nombre">
+  <div class="error" *ngIf="formContac.controls['nombre'].invalid && formContac.controls['nombre'].touched">
+    El nombre es requerido y no puede contener números o caracteres especiales.
+  </div>
 
-  <input type="text" formControlName="apellido" placeholder="Apellido">
+  <label for="apellido">Apellido:</label>
+  <input type="text" id="apellido" formControlName="apellido" placeholder="Apellido">
 
-  <input type="number" formControlName="telefono" placeholder="Teléfono">
-  <div *ngIf="formContac.controls['telefono'].invalid && formContac.controls['telefono'].touched">Ingresa solo números.</div>
+  <label for="telefono">Teléfono:</label>
+  <input type="tel" id="telefono" formControlName="telefono" placeholder="Teléfono">
+  <div class="error" *ngIf="formContac.controls['telefono'].invalid && formContac.controls['telefono'].touched">
+    Ingresa un número de teléfono válido.
+  </div>
 
-  <input type="email" formControlName="email" placeholder="Email">
-  <div class="error" *ngIf="formContac.controls['email'].invalid && formContac.controls['email'].touched">Ingresa un email válido.</div>
+  <label for="email">Email:</label>
+  <input type="email" id="email" formControlName="email" placeholder="Email">
+  <div class="error" *ngIf="formContac.controls['email'].invalid && formContac.controls['email'].touched">
+    Ingresa un email válido.
+  </div>
 
   <button type="submit">Enviar</button>
 </form>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Busqueda, BusquedaService } from '../servicios/busqueda.service';
+import { BusquedaService, Informacion } from '../servicios/busqueda.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -7,24 +7,25 @@ import { Observable } from 'rxjs';
   templateUrl: './buscador.component.html',
   styleUrls: ['./buscador.component.css']
 })
-export class BuscadorComponent implements OnInit{
-  infos: Observable<Busqueda>;
-  listado:any = [];
+export class BuscadorComponent implements OnInit {
+  info$: Observable<Informacion[]>;
+  listado: Informacion[] = [];
 
-  buscar: any;
   constructor(private servicioBusqueda: BusquedaService) {
-      this.infos = servicioBusqueda.queryBusqueda;
-      this.servicioBusqueda.devolverListaFiltrada().suscribe((r:any)=>{
-        this.listado = r;
-      })
+    this.info$ = servicioBusqueda.devolverListaFiltrada();
   }
 
   ngOnInit(): void {
-
+    this.servicioBusqueda.devolverListaFiltrada().subscribe((data: Informacion[]) => {
+      this.listado = data;
+    });
   }
 
-  search(query:any){
-    this.servicioBusqueda.newQueryBusqueda = {query}
+  search(query: any) {
+    if (query.trim() !== '') {
+      this.servicioBusqueda.newQueryBusqueda = { query };
+    } else {
+      this.listado = [];
+    }
   }
 }
-

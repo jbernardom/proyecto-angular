@@ -1,7 +1,8 @@
 .contenedor {
   display: grid;
   gap: 20px;
-  justify-items: center;
+  justify-items: left;
+  margin: 20px;
 }
 .elementos {
   display: grid;
@@ -21,6 +22,7 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
+
 }
 .elemento p {
   font-size: 16px;

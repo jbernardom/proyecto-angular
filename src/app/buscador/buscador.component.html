@@ -1,5 +1,16 @@
-<p>buscador works!</p>
+<p></p>
 
 <input #buscar (keyup.enter)="search(buscar.value)" type="text" placeholder="Que desea buscar">
 <button type="button" (click)="search (buscar.value)">Buscar</button>
 
+
+<div class="resultado">
+  <h3>Resultados de la búsqueda:</h3>
+  <ul>
+    <li *ngFor="let producto of listado">
+      <h4>{{ producto.titulo }}</h4>
+      <img [src]="producto.imagen" alt="{{ producto.titulo }}">
+      <p>{{ producto.descripcion }}</p>
+    </li>
+  </ul>
+</div>
