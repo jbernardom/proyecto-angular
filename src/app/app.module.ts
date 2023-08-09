@@ -11,7 +11,7 @@ import { CardsComponent } from './cards/cards.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { RouterModule } from '@angular/router';
-import { FormularioModule } from './formulario/formulario.module'; // Asegúrate de importar el módulo aquí
+import { FormularioModule } from './formulario/formulario.module';
 import { CotizarComponent } from './cotizar/cotizar.component';
 import { ContactoComponent } from './formulario/contacto/contacto.component';
 import { BuscadorComponent } from './buscador/buscador.component';

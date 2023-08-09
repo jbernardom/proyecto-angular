@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class BuscadorComponent implements OnInit {
   info$: Observable<Informacion[]>;
   listado: Informacion[] = [];
+  mostrarResultados = false;
 
   constructor(private servicioBusqueda: BusquedaService) {
     this.info$ = servicioBusqueda.devolverListaFiltrada();
@@ -24,8 +25,19 @@ export class BuscadorComponent implements OnInit {
   search(query: any) {
     if (query.trim() !== '') {
       this.servicioBusqueda.newQueryBusqueda = { query };
+      this.mostrarResultados = true;
     } else {
       this.listado = [];
+      this.mostrarResultados = false;
+    }
+  }
+
+  getImagePath(imagePath: string): string {
+    if (imagePath.startsWith('./')) {
+      return `assets/${imagePath.substring(2)}`;
+    } else {
+      return imagePath;
     }
   }
 }
+

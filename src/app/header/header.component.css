@@ -30,7 +30,7 @@
   display: none;
 }
 
-/* Mostrar el icono Font Awesome cuando la pantalla sea menor a 768px */
+
 @media screen and (max-width: 767px) {
   .toggle-icon {
     display: inline-block;
