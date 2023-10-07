@@ -9,25 +9,25 @@ class ContactoController {
         if(empty($informacion['mensaje'])) {
             return $this->responderComoJSON(
                 [
-                "mensaje_error" => "Hace falta que indique el mensaje"              
+                "mensaje_error" => "Hace falta que indique el mensaje"
                 ]
-                ,400); 
+                ,400);
         }
-    
+
 
         $contactoModelo = new ContactoModelo(
             $informacion['nombres'],
             $informacion['apellidos'],
-            $informacion['mensaje']
+            $informacion['telefono']
         );
 
         $contactoModeloCreadoEnDB = $this->guardarEnDB($contactoModelo);
-        
+
         return $this->responderComoJSON([
                 "mensaje" => "El contacto fue guardado con exito",
                 "contacto" => $contactoModeloCreadoEnDB->toArray()
         ]);
-        
+
     }
 
     private function responderComoJSON(array $dataResponder, $statusCode = 200)
@@ -39,12 +39,25 @@ class ContactoController {
 
     private function guardarEnDB(ContactoModelo $contactoModelo)
     {
-        
+      $conexion = new PDO('mysql:host=127.0.0.1;dbname=mi_cerveza','root','');
+
+      $queryIn = "INSERT INTO contactos (nombres,apellidos,telefono) VALUES(:nombres,:apellidos,:telefono)";
+
+        $smt = $conexion->prepare($queryIn);
+
+        $smt->bindParam(':nombres',$contactoModelo->nombres);
+        $smt->bindParam(':nombres',$contactoModelo->apellidos);
+        $smt->bindParam(':nombres',$contactoModelo->telefono);
+        $smt->execute();
+        return $contactoModelo;
+
+        /*
         $id = random_int(1,1000);
         $contactoModelo->setID($id);
         $contactoArray = $contactoModelo->toArray();
         $contactosJSON = json_encode($contactoArray);
-        file_put_contents("../db/db.json",$contactosJSON);        
+        file_put_contents("../db/db.json",$contactosJSON);
         return $contactoModelo;
+        */
     }
 }
