@@ -13,7 +13,7 @@ export class ContactoComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private contactoService: ContactoService
-  ) {} // Inyecta el servicio
+  ) {}
 
   ngOnInit(): void {
     this.formContac = this.fb.group({

@@ -1,19 +1,19 @@
 <?php
 include "../Modelos/ContactoModelo.php";
+
 class ContactoController {
 
     public function guardar(array $informacion)
     {
-
-        //validacion
-        if(empty($informacion['mensaje'])) {
+        // Validación
+        if (empty($informacion['mensaje'])) {
             return $this->responderComoJSON(
                 [
-                "mensaje_error" => "Hace falta que indique el mensaje"
-                ]
-                ,400);
+                    "mensaje_error" => "Hace falta que indique el mensaje"
+                ],
+                400
+            );
         }
-
 
         $contactoModelo = new ContactoModelo(
             $informacion['nombres'],
@@ -24,10 +24,9 @@ class ContactoController {
         $contactoModeloCreadoEnDB = $this->guardarEnDB($contactoModelo);
 
         return $this->responderComoJSON([
-                "mensaje" => "El contacto fue guardado con exito",
-                "contacto" => $contactoModeloCreadoEnDB->toArray()
+            "mensaje" => "El contacto fue guardado con éxito",
+            "contacto" => $contactoModeloCreadoEnDB->toArray()
         ]);
-
     }
 
     private function responderComoJSON(array $dataResponder, $statusCode = 200)
@@ -39,25 +38,24 @@ class ContactoController {
 
     private function guardarEnDB(ContactoModelo $contactoModelo)
     {
-      $conexion = new PDO('mysql:host=127.0.0.1;dbname=mi_cerveza','root','ba+260101');
+        try {
+            $conexion = new PDO('mysql:host=127.0.0.1;dbname=mi_cerveza', 'root', 'ba+260101');
 
-      $queryIn = "INSERT INTO contactos (nombres,apellidos,telefono) VALUES(:nombres,:apellidos,:telefono)";
+            $queryIn = "INSERT INTO contactos (nombres, apellidos, telefono) VALUES(:nombres, :apellidos, :telefono)";
 
-        $smt = $conexion->prepare($queryIn);
+            $smt = $conexion->prepare($queryIn);
 
-        $smt->bindParam(':nombres',$contactoModelo->nombres);
-        $smt->bindParam(':nombres',$contactoModelo->apellidos);
-        $smt->bindParam(':nombres',$contactoModelo->telefono);
-        $smt->execute();
-        return $contactoModelo;
+            $smt->bindParam(':nombres', $contactoModelo->nombres);
+            $smt->bindParam(':apellidos', $contactoModelo->apellidos);
+            $smt->bindParam(':telefono', $contactoModelo->telefono);
+            $smt->execute();
 
-        /*
-        $id = random_int(1,1000);
-        $contactoModelo->setID($id);
-        $contactoArray = $contactoModelo->toArray();
-        $contactosJSON = json_encode($contactoArray);
-        file_put_contents("../db/db.json",$contactosJSON);
-        return $contactoModelo;
-        */
+
+            $contactoModelo->setID($conexion->lastInsertId());
+
+            return $contactoModelo;
+        } catch (PDOException $e) {
+            return null;
+        }
     }
 }
