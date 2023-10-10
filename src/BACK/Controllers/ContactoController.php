@@ -39,7 +39,7 @@ class ContactoController {
 
     private function guardarEnDB(ContactoModelo $contactoModelo)
     {
-      $conexion = new PDO('mysql:host=127.0.0.1;dbname=mi_cerveza','root','');
+      $conexion = new PDO('mysql:host=127.0.0.1;dbname=mi_cerveza','root','ba+260101');
 
       $queryIn = "INSERT INTO contactos (nombres,apellidos,telefono) VALUES(:nombres,:apellidos,:telefono)";
 
